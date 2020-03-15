@@ -1,2 +1,2 @@
 Echo Framework Tutorial
-https://medium.com/@kyawmyintthein/building-golang-restful-api-with-echo-framework-1-422abc78e3a7
+https://ednsquare.com/story/getting-started-with-golang-and-echo-framework------GeVkMF
