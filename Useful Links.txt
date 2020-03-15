@@ -14,9 +14,9 @@ eb --version
 Install a go application to elastic beanstalk
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/go-tutorial.html
 
-eb init -p go go-tutorial --region us-east-1 --profile circleci-user
+eb init -p go 4-go-tutorial --region us-east-1 --profile circleci-user
 eb init --region us-east-1 --profile circleci-user
-eb create go-env --region us-east-1 --profile circleci-user
+eb create 4-go-env --region us-east-1 --profile circleci-user
 eb terminate --all --profile circleci-user
 
 CircleCI - setup elastic beanstalk
