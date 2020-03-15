@@ -4,4 +4,7 @@
 go get ./...
 
 # Build app
-go build ./ -o bin/application
+# go build ./ -o bin/application
+
+# build command
+go build application.go -o bin/application 
