@@ -1,2 +1,5 @@
 Run all tests
 go test ...
+
+Start server.go
+go run server.go
