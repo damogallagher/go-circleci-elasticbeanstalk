@@ -15,11 +15,6 @@ jobs:
     ####   /go/src/github.com/circleci/go-tool
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/damogallagher/go-circle-elasticbeanstalk
-    parameters:
-      applicationName:
-        description: "The name of the application to deploy"
-        default: "null"
-        type: string
     steps: 
       - run: sudo apt-get -y -qq update
       - run: sudo apt-get install python-pip python-dev build-essential
@@ -28,14 +23,12 @@ jobs:
       - run: go get -v -t -d ./...
       - run: go build
       - run: go test -v ./... 
-      - run: eb deploy
-      ####- run: eb deploy --staged << parameters.applicationName >>    
+      - run: eb deploy   
 workflows:
     deploy-go-server:
       jobs:
       - deploy-application:
           name: deploy-test
-          applicationName: myapp-staging
           filters:
             branches:
               only: develop
@@ -44,7 +37,6 @@ workflows:
           requires:
             - approve-prod-app-deployment
           name: deploy-prod
-          applicationName: myapp
           filters:
             branches:
               only: master
