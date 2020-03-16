@@ -21,10 +21,13 @@ jobs:
         default: "null"
         type: string
     steps: 
-      - checkout
       - run: sudo apt-get -y -qq update
       - run: sudo apt-get install python-pip python-dev build-essential
       - run: sudo pip install awsebcli --upgrade
+      - checkout
+      - run: go get -v -t -d ./...
+      - run: go build
+      - run: go test -v ./... 
       - run: eb deploy
       ####- run: eb deploy --staged << parameters.applicationName >>    
 workflows:
