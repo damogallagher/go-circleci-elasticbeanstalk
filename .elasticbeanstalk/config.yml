@@ -13,5 +13,5 @@ global:
   instance_profile: null
   platform_name: null
   platform_version: null
-  sc: git
+  sc: git 
   workspace_type: Application 
