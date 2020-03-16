@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  deploy-application:
     docker:
       # specify the version
       - image: circleci/golang:1.13
