@@ -20,7 +20,7 @@ jobs:
         description: "The name of the application to deploy"
         default: "null"
         type: string
-    steps:
+    steps: 
       - checkout
       - run: sudo apt-get -y -qq update
       - run: sudo apt-get install python-pip python-dev build-essential
