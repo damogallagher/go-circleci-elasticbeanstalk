@@ -1,2 +1,24 @@
 Echo Framework Tutorial
-https://medium.com/@kyawmyintthein/building-golang-restful-api-with-echo-framework-1-422abc78e3a7
+https://ednsquare.com/story/getting-started-with-golang-and-echo-framework------GeVkMF
+
+Install elastic beanstalk cli
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
+https://aws.amazon.com/getting-started/tutorials/set-up-command-line-elastic-beanstalk/
+
+Or - recommended on MAC
+brew update
+brew install awsebcli
+eb --version
+
+
+Install a go application to elastic beanstalk
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/go-tutorial.html
+
+eb init -p go 4-go-tutorial --region us-east-1 --profile circleci-user
+eb init --region us-east-1 --profile circleci-user
+eb create 4-go-env --region us-east-1 --profile circleci-user
+eb terminate --all --profile circleci-user
+
+CircleCI - setup elastic beanstalk
+https://discuss.circleci.com/t/how-to-setup-elastic-beanstalk-deployment/6154/4
+https://medium.com/@vygandas/how-to-deploy-laravel-project-using-circleci-2-to-aws-elastic-beanstalk-468f888f47c5
