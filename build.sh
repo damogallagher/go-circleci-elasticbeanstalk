@@ -6,6 +6,7 @@ go get ./...
 # Build app
 # go build ./ -o bin/application
 
+echo "Hello world"
 ls -latr
 
 
