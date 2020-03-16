@@ -14,8 +14,10 @@ echo "Post list dir"
 #go build application.go -o bin/application 
 
 echo "Pre build application.go"
-mkdir bin
+rm -rf go.mod
+go get -v -t -d ./...
 go build application.go
+mkdir bin
 ls -latr
 ls -latr bin/
 echo "Post build application.go"
