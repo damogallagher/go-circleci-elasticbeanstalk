@@ -21,3 +21,4 @@ eb terminate --all --profile circleci-user
 
 CircleCI - setup elastic beanstalk
 https://discuss.circleci.com/t/how-to-setup-elastic-beanstalk-deployment/6154/4
+https://medium.com/@vygandas/how-to-deploy-laravel-project-using-circleci-2-to-aws-elastic-beanstalk-468f888f47c5
