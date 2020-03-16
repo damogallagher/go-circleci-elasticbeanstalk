@@ -6,6 +6,9 @@ go get ./...
 # Build app
 # go build ./ -o bin/application
 
+ls -latr
+
+
 # build command
 #go build application.go -o bin/application 
 go build application.go
