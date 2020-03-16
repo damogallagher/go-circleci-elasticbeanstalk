@@ -15,6 +15,7 @@ echo "Post list dir"
 
 echo "Pre build application.go"
 mkdir bin
+rm -rf go.mod
 go build application.go
 ls -latr
 ls -latr bin/
