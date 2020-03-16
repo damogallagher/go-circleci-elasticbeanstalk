@@ -1,10 +1,10 @@
 branch-defaults:
   master:
-    environment: myapp
+    environment: myapp-prod
   develop:
     environment: myapp-staging
 global:
-  application_name: myapp-staging
+  application_name: myapp
   default_ec2_keyname: null
   default_platform: arn:aws:elasticbeanstalk:us-east-1::platform/Go 1 running on 64bit
     Amazon Linux/2.14.3
