@@ -14,16 +14,10 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run:
-              name: Installing deployment dependencies
-              working_directory: ~/repo
-              command: |
-                sudo apt-get -y -qq update
-                sudo apt-get install python-pip python-dev build-essential
-                sudo pip install awsebcli --upgrade
-            - run:
-              name: Deploying application
-              command: eb deploy --staged $applicationName    
+            - run: sudo apt-get -y -qq update
+            - run: sudo apt-get install python-pip python-dev build-essential
+            - run: sudo pip install awsebcli --upgrade
+            - run: eb deploy --staged $applicationName    
 workflows:
     deploy-frontend-client:
       jobs:
