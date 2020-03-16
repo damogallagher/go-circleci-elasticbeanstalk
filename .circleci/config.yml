@@ -1,26 +1,44 @@
-machine:
-  python:
-    version: 2.7.6
-
-dependencies:
-  pre:
-    - pip install awsebcli
-    - printenv
-
-database:
-  override:
-    - exit 0
-
-test:
-  override:
-    - exit 0
-
-deployment:
-  staging:
-    branch: staging
-    commands:
-      - eb deploy vegewel-staging
-  production:
-    branch: master
-    commands:
-      - eb deploy vegewel
+version: 2.1
+orbs:
+  awsebcli: sbc-orbs/awsebcli@0.0.3
+jobs:
+  deploy-application:
+    executor:
+      name: node/default
+    parameters:
+      applicationName:
+        description: "The name of the application to deploy"
+        default: "null"
+        type: string
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: eb deploy $applicationName    
+workflows:
+    deploy-frontend-client:
+      jobs:
+      - deploy-application:
+          name: deploy-test
+          applicationName: myapp-staging
+          filters:
+            branches:
+              only: develop
+          context: test
+      - deploy-application:
+          requires:
+            - approve-prod-app-deployment
+          name: deploy-prod
+          applicationName: myapp
+          filters:
+            branches:
+              only: master
+          context: prod
+      - deploy-application:
+          type: approval
+          name: approve-prod-app-deployment
+          filters:
+            branches:
+              only: master
+          context: prod          
+          
