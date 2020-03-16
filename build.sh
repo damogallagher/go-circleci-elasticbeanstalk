@@ -6,13 +6,23 @@ go get ./...
 # Build app
 # go build ./ -o bin/application
 
-echo "Hello world"
+echo "Pre list dir"
 ls -latr
-
+echo "Post list dir"
 
 # build command
 #go build application.go -o bin/application 
-go build application.go
 
+echo "Pre build application.go"
 mkdir bin
+go build application.go
+ls -latr
+ls -latr bin/
+echo "Post build application.go"
+
+
+
 mv application bin/
+echo "Pre list bin dir"
+ls -latr bin/
+echo "Post list bin dir"
