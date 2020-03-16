@@ -5,7 +5,7 @@ branch-defaults:
     environment: myapp-staging
 global:
   application_name: myapp
-  default_ec2_keyname: null
+  default_ec2_keyname: damien-keypair
   default_platform: arn:aws:elasticbeanstalk:us-east-1::platform/Go 1 running on 64bit
     Amazon Linux/2.14.3
   default_region: us-east-1
